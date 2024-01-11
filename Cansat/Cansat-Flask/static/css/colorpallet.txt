@@ -1,0 +1,4 @@
+black: #0F0F0F
+dark blue : #232D3F
+dark green : #005B41
+light green : #008170
