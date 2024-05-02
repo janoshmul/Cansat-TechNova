@@ -1,30 +1,3 @@
-body{
-    background-color: #0f0f0f;
-    color: white;
-}
-.chart-temp-over-time-container{
-    height: 300px;
-    width: 500px;
-    margin-top: 60px;
-    margin-left: 40px;
-    box-sizing: border-box;
-    height: 330px;
-    border:solid #3F0071;
-
-}
-.header{
-    border-style: solid;
-    border-color: #610094;
-}
-.link{
-    text-align: right;
-    color:#9290C3 ;
-    text-decoration: none;
-}
-.link a:visited{
-    color:#9290C3 ;
-    text-decoration: none;
-}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -32,41 +5,55 @@ body {
     background-color: #000000;
     color: #ffffff;
 }
+
+.chart-temp-over-time-container {
+    height:  800px;
+    width: 1000px;
+    margin-top: 60px;
+    margin-left: 40px;
+    box-sizing: border-box;
+}
+
 header {
     background-color: #150050;
     padding: 20px;
     text-align: center;
 }
+
 header a {
     color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 10px;
 }
+
 header a:hover {
     background-color: #3F0071;
 }
-h1 {
-    margin: 0;
-}
+
 nav {
     background-color: #3F0071;
     padding: 10px 0;
     text-align: center;
 }
+
 nav a {
     color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
 }
+
 nav a:hover {
     background-color: #610094;
 }
+
 .container {
-    margin: 20px auto;
-    width: 80%;
-    text-align: center;
+    display: flex;
 }
+
+/*    margin: 20px auto;
+    width: 80%;
+    text-align: center;*/
 .graph {
     background-color: #ffffff;
     border-radius: 10px;
