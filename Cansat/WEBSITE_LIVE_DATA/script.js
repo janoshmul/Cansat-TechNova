@@ -1,6 +1,7 @@
 const tempOverTimeCSV = 'data/testdata.csv';
 const pressionOverTimeCSV = 'data/testdata.csv';
 const anglediff = 'data/testdata.csv';
+const altOverTime = 'data/testdata.csv';
 
 async function getdatacsv(CSVDATA) {
     var xs = [];
@@ -95,8 +96,24 @@ async function angleDifference() {
         },
     });
 }
+async function altitudeOverTime() {
+    var data = await getdatacsv(altOverTime);
+    const ctx = document.getElementById('altOverTime');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data.xs,
+            datasets: [{
+                fill: true,
+                label: 'Temparature over time in C',
+                data: data.ys,
+            }]
+        },
+    });
+}
 
 
 tempOverTime();
 angleDifference();
 pressionOverTime();
+altitudeOverTime();
