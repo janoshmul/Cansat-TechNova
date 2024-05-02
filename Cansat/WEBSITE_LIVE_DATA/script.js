@@ -1,6 +1,6 @@
-const tempOverTimeCSV = 'testdata.csv';
-const pressionOverTimeCSV = 'testdata.csv';
-const RSSIpOverTimeCSV = 'testdata.csv';
+const tempOverTimeCSV = 'data/testdata.csv';
+const pressionOverTimeCSV = 'data/testdata.csv';
+const anglediff = 'data/testdata.csv';
 
 async function getdatacsv(CSVDATA) {
     var xs = [];
@@ -12,14 +12,14 @@ async function getdatacsv(CSVDATA) {
         const row = elt.split(',');
         const TIME = row[0];
         xs.push(TIME);
-        const TEMP = row[1];
-        ys.push(TEMP);
+        const Ydata = row[1];
+        ys.push(Ydata);
     });
     return { xs, ys };
 }
-async function THE_CHART() {
+async function tempOverTime() {
     var data = await getdatacsv(tempOverTimeCSV);
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('tempovertime');
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -43,9 +43,9 @@ async function THE_CHART() {
         }
     });
 }
-async function CHART3() {
-    var data = await getdatacsv(tempOverTimeCSV);
-    const ctx = document.getElementById('Chart3');
+async function pressionOverTime() {
+    var data = await getdatacsv(pressionOverTimeCSV);
+    const ctx = document.getElementById('pressionOverTime');
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -69,33 +69,34 @@ async function CHART3() {
         }
     });
 }
-async function CHART2() {
-    var data = await getdatacsv(tempOverTimeCSV);
-    const ctx = document.getElementById('Chart2');
+async function angleDifference() {
+    var data = await getdatacsv(anglediff);
+    const ctx = document.getElementById('anglediff');
     new Chart(ctx, {
         type: 'line',
         data: {
             labels: data.xs,
-            datasets: [{
-                fill: true,
-                label: 'Temparature over time in C',
-                data: data.ys,
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    ticks: {
-                        callback: function (value, index, ticks) {
-                            return value + '°';
-                        }
-                    }
+            datasets: [
+                {
+                    label: 'Temparature over time in C',
+                    data: data.ys,
+                },
+                {
+                    label: "AREWEREALLYTESTING?",
+                    data: data.ys,
+                    type: 'bar'
+                },
+                {
+                    label: "test?",
+                    data: data.ys,
+                    type: 'line'
                 }
-            }
-        }
+            ]
+        },
     });
 }
-THE_CHART();
-CHART2();
-CHART3();
-getdatacsv(tempOverTimeCSV);
+
+
+tempOverTime();
+angleDifference();
+pressionOverTime();

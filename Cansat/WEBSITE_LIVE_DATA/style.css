@@ -6,8 +6,8 @@ body {
     color: #ffffff;
 }
 
-.chart-temp-over-time-container {
-    height:  800px;
+.chart-container {
+    height: 800px;
     width: 1000px;
     margin-top: 60px;
     margin-left: 40px;
